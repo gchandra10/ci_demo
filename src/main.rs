@@ -1,5 +1,5 @@
 fn add(a: f32, b: f32) -> f32 {
-    a + b
+    a + b + 1
 }
 
 fn sub(a: f32, b: f32) -> f32 {
