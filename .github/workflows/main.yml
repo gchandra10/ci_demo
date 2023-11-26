@@ -26,3 +26,15 @@ jobs:
       uses: actions-rs/cargo@v1
       with:
         command: test
+    - name: Send Email Notification on Failure
+      if: failure()
+      uses: dawidd6/action-send-mail@v2
+      with:
+        server_address: ${{ secrets.EMAIL_SERVER }}
+        server_port: ${{ secrets.EMAIL_PORT }}
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
+        subject: CI Failure in ${{ github.repository }}
+        to: gchandra@gmail.com
+        from: gchandra10@github.com
+        body: The Rust CI test failed. Check the details on GitHub.
