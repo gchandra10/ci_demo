@@ -38,3 +38,10 @@ jobs:
     #     to: chandr34@rowan.edu
     #     from: chandr34@rowan.edu
     #     body: The Rust CI test failed. Check the details on GitHub.
+    - name: Discord notification
+      if: failure()
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+      uses: Ilshidur/action-discord@master
+      with:
+        args: 'The CI {{ EVENT_PAYLOAD.repository.full_name }} test failed. Check the details on Github'
