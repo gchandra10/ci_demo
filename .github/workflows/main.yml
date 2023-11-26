@@ -49,7 +49,7 @@ jobs:
 
     - name: Send Discord Success Notification
       # https://github.com/marketplace/actions/actions-for-discord
-      if: failure()
+      if: success()
       env:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
       uses: Ilshidur/action-discord@master

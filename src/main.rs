@@ -53,10 +53,10 @@ fn test_sub() {
 
 #[test]
 fn test_sub1() {
-    assert!(sub(203.0, 10.0) == 10.0f32);
+    assert!(sub(20.0, 10.0) == 10.0f32);
 }
 
 #[test]
 fn test_sub2() {
-    assert!(sub(03.0, 10.0) == 10f32);
+    assert!(sub(3.0, 1.0) == 2f32);
 }
