@@ -35,6 +35,6 @@ jobs:
         username: ${{ secrets.EMAIL_USERNAME }}
         password: ${{ secrets.EMAIL_PASSWORD }}
         subject: CI Failure in ${{ github.repository }}
-        to: gchandra@gmail.com
+        to: chandr34@rowan.edu
         from: gchandra10@github.com
         body: The Rust CI test failed. Check the details on GitHub.
