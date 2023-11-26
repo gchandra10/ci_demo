@@ -1,5 +1,5 @@
 fn add(a: f32, b: f32) -> f32 {
-    a + b + 1.0
+    a + b
 }
 
 fn sub(a: f32, b: f32) -> f32 {
@@ -52,13 +52,11 @@ fn test_sub() {
 }
 
 #[test]
-#[ignore]
 fn test_sub1() {
     assert!(sub(203.0, 10.0) == 10.0f32);
 }
 
 #[test]
-#[ignore]
 fn test_sub2() {
     assert!(sub(03.0, 10.0) == 10f32);
 }
