@@ -16,7 +16,7 @@ jobs:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
       uses: Ilshidur/action-discord@master
       with:
-        args: ' :information_source: The Calculator App {{ EVENT_PAYLOAD.repository.full_name }} workflow was triggered by ${{ github.actor }}'
+        args: ' :information_source: The Calculator App {{ EVENT_PAYLOAD.repository.full_name }} workflow (${{ github.run_id }}) was triggered by ${{ github.actor }}'
 
     - uses: actions/checkout@v2
     - name: Install Rust
@@ -48,7 +48,7 @@ jobs:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
       uses: Ilshidur/action-discord@master
       with:
-        args: '@here :x: The Calculator App integration {{ EVENT_PAYLOAD.repository.full_name }} test failed. Check the details on Github'
+        args: '@here :x: The Calculator App integration {{ EVENT_PAYLOAD.repository.full_name }} test failed. Check the Run id ${{ github.run_id }} on Github for details.'
 
     - name: Send Discord Success Notification
       # https://github.com/marketplace/actions/actions-for-discord
@@ -57,7 +57,7 @@ jobs:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
       uses: Ilshidur/action-discord@master
       with:
-        args: ' :white_check_mark: The Calculator App {{ EVENT_PAYLOAD.repository.full_name }} successfully integrated and tested.'
+        args: ' :white_check_mark: The Calculator App {{ EVENT_PAYLOAD.repository.full_name }} - ${{ github.run_id }} successfully integrated and tested.'
 
     # - name: Generate Documentation
     #   uses: actions-rs/cargo@v1
