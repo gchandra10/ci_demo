@@ -7,10 +7,17 @@ on:
     branches: [ main ]
 
 jobs:
-  mycalcapp:
+  build_step:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Discord - Process started
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+      uses: Ilshidur/action-discord@master
+      with:
+        args: ' :information_source: The Calculator App {{ EVENT_PAYLOAD.repository.full_name }} workflow was triggered by ${{ github.actor }}'
+
     - uses: actions/checkout@v2
     - name: Install Rust
       uses: actions-rs/toolchain@v1
