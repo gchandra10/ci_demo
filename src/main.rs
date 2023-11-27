@@ -1,63 +1,31 @@
-fn add(a: f32, b: f32) -> f32 {
-    a + b
-}
-
-fn sub(a: f32, b: f32) -> f32 {
-    if a < b {
-        panic!("first value cannot be less than second value");
-    } else {
-        a - b
-    }
-}
-
-#[allow(dead_code)]
-fn mul(a: f32, b: f32) -> f32 {
-    a * b
-}
-
-#[allow(dead_code)]
-fn div(a: f32, b: f32) -> f32 {
-    a / b
-}
+mod calculator;
 
 fn main() {
-    let a: f32 = 17.0;
-    let b: f32 = 33.0;
-    let op = "+";
-    let mut result: f32 = 0.0;
+    let num1: f32 = 34.0;
+    let num2: f32 = 17.0;
+    let op = "*";
+    let result: f32;
 
-    if op == "+" {
-        result = add(a, b);
-    } else if op == "-" {
-        result = sub(a, b)
+    match op {
+        "+" => result = calculator::add(num1, num2),
+        "-" => result = calculator::sub(num1, num2),
+        "*" => result = calculator::mul(num1, num2),
+        "/" => result = calculator::div(num1, num2),
+        _ => panic!("Invalid Operator"),
     }
 
-    println!("{result}");
-}
+    // if op == "+" {
+    //     result = calculator::add(a, b);
+    // } else if op == "-" {
+    //     result = calculator::sub(a, b)
+    // }
+    // else if op == "*" {
+    //     result = calculator::mul(a, b)
+    // }
+    // else if op == "/" {
+    //     result = calculator::div(a, b)
+    // }
 
-#[test]
-fn test_add() {
-    assert!(add(20.0, 10.0) == 30f32);
-}
+    println!("\n\n Result of {num1} {op} {num2} = {result}\n\n");
 
-#[test]
-fn test_add1() {
-    assert!(add(10.0, 20.0) == 30f32);
-}
-
-#[test]
-#[should_panic(expected = "cannot be less")]
-fn test_sub() {
-    assert!(sub(10.0, 20.0) == -10.0f32);
-}
-
-#[test]
-fn test_sub1() {
-    assert!(sub(20.0, 10.0) == 10.0f32);
-}
-
-#[test]
-#[should_panic(expected = "cannot be less")]
-fn test_sub2() {
-    assert!(sub(1.0, 2.0) == 2f32);
 }
