@@ -5,7 +5,7 @@ use ci_demo::calculator;
 
     #[test]
     fn test_add1() {
-        assert!(calculator::add(20.0, 10.0) == 30f32);
+        assert!(calculator::add(20.0, 10.0) == 3f32);
     }
 
     #[test]

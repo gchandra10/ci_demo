@@ -41,7 +41,7 @@ jobs:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
       uses: Ilshidur/action-discord@master
       with:
-        args: '@here The Calculator App integration {{ EVENT_PAYLOAD.repository.full_name }} test failed. Check the details on Github'
+        args: '@here `:x:` The Calculator App integration {{ EVENT_PAYLOAD.repository.full_name }} test failed. Check the details on Github'
 
     - name: Send Discord Success Notification
       # https://github.com/marketplace/actions/actions-for-discord
@@ -50,7 +50,7 @@ jobs:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
       uses: Ilshidur/action-discord@master
       with:
-        args: 'The Calculator App {{ EVENT_PAYLOAD.repository.full_name }} successfully integrated and tested.'
+        args: ' `:white_check_mark:` The Calculator App {{ EVENT_PAYLOAD.repository.full_name }} successfully integrated and tested.'
 
     # - name: Generate Documentation
     #   uses: actions-rs/cargo@v1
