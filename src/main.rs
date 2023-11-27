@@ -57,6 +57,7 @@ fn test_sub1() {
 }
 
 #[test]
+#[should_panic(expected = "cannot be less")]
 fn test_sub2() {
     assert!(sub(1.0, 2.0) == 2f32);
 }
