@@ -58,5 +58,5 @@ fn test_sub1() {
 
 #[test]
 fn test_sub2() {
-    assert!(sub(3.0, 1.0) == 2f32);
+    assert!(sub(1.0, 2.0) == 2f32);
 }
