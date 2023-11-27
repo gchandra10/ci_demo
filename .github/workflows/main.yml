@@ -54,4 +54,4 @@ jobs:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
       uses: Ilshidur/action-discord@master
       with:
-        args: 'The CI {{ EVENT_PAYLOAD.repository.full_name }} successfully tested.'
+        args: 'The CI {{ EVENT_PAYLOAD.repository.full_name }} successfully integrated and tested.'
