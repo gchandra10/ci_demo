@@ -3,7 +3,7 @@ mod calculator;
 fn main() {
     let num1: f32 = 34.0;
     let num2: f32 = 17.0;
-    let op = "*";
+    let op = "+";
     let result: f32;
 
     match op {
