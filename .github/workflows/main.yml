@@ -18,26 +18,26 @@ jobs:
       with:
         args: ' :information_source: The Calculator App {{ EVENT_PAYLOAD.repository.full_name }} workflow (${{ github.run_id }}) was triggered by ${{ github.actor }}'
 
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Install Rust
-      uses: actions-rs/toolchain@v1
+      uses: actions-rs/toolchain@v2
       with:
         toolchain: stable
         override: true
 
     - name: Build
-      uses: actions-rs/cargo@v1
+      uses: actions-rs/cargo@v2
       with:
         command: build
         args: --release
 
     - name: Run tests
-      uses: actions-rs/cargo@v1
+      uses: actions-rs/cargo@v2
       with:
         command: test
 
     # - name: Format the Code
-    #   uses: actions-rs/cargo@v1
+    #   uses: actions-rs/cargo@v2
     #   with:
     #     command: fmt
 
