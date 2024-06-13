@@ -6,7 +6,7 @@ pub fn sub(a: f32, b: f32) -> f32 {
     if a < b {
         panic!("first value cannot be less than second value");
     } else {
-        a - b
+        a + b
     }
 }
 
