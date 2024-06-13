@@ -20,24 +20,24 @@ jobs:
 
     - uses: actions/checkout@v3
     - name: Install Rust
-      uses: actions-rs/toolchain@v2
+      uses: actions-rs/toolchain@v1
       with:
         toolchain: stable
         override: true
 
     - name: Build
-      uses: actions-rs/cargo@v2
+      uses: actions-rs/cargo@v1
       with:
         command: build
         args: --release
 
     - name: Run tests
-      uses: actions-rs/cargo@v2
+      uses: actions-rs/cargo@v1
       with:
         command: test
 
     # - name: Format the Code
-    #   uses: actions-rs/cargo@v2
+    #   uses: actions-rs/cargo@v1
     #   with:
     #     command: fmt
 
